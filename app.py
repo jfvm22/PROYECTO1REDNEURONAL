@@ -8,7 +8,7 @@ st.title("Credit Card App")
 # ============ Aplicación Principal  ============
         
 # Definir las opciones de página
-pages = ["Cargar Datos", "Explorar Datos"]
+pages = ["Cargar Datos", "Explorar Datos", "Feature Engineering", "Modelado", "Neural Network", "Prediccion"]
 
 # Mostrar un menú para seleccionar la página
 selected_page = st.sidebar.multiselect("Seleccione una página", pages)
