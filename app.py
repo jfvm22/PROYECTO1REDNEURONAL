@@ -40,14 +40,14 @@ if "Feature Engineering" in selected_page:
 if "Modelado" in selected_page:
     st.write("""
     ## Modelado
-    """)
+    por definir""")
 
 if "Neural Network" in selected_page:
     st.write("""
     ## Neural Network
-    """)
+    por definir""")
 
 if "Prediccion" in selected_page:
     st.write("""
     ## Prediccion
-    """)
+    por definir""")
