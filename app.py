@@ -34,20 +34,20 @@ if "Explorar Datos" in selected_page:
 
 if "Feature Engineering" in selected_page:
     st.write("""
-    ## Explore Data
+    ## Feature Engineering
     New dataset""")
 
 if "Modelado" in selected_page:
     st.write("""
-    ## Explore Data
+    ## Modelado
     """)
 
 if "Neural Network" in selected_page:
     st.write("""
-    ## Explore Data
+    ## Neural Network
     """)
 
-if "prediccion" in selected_page:
+if "Prediccion" in selected_page:
     st.write("""
-    ## Explore Data
+    ## Prediccion
     """)
