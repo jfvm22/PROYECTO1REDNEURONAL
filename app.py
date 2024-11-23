@@ -32,7 +32,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix, fbeta_score, class
 
 #definir funciones
 def get_eda(dataset):
-    # Distribución de Creditos por Tipo de Casa
+    # DistribuciÃ³n de Creditos por Tipo de Casa
     trace0 = go.Bar(
         x=dataset[dataset["risk"] == 'good']["housing"].value_counts().index.values,
         y=dataset[dataset["risk"] == 'good']["housing"].value_counts().values,
@@ -55,7 +55,7 @@ def get_eda(dataset):
 
     st.plotly_chart(fig)
 
-    # Distribución de Creditos por Genero
+    # DistribuciÃ³n de Creditos por Genero
     trace0 = go.Bar(
         x=dataset[dataset["risk"] == 'good']["sex"].value_counts().index.values,
         y=dataset[dataset["risk"] == 'good']["sex"].value_counts().values,
@@ -78,7 +78,7 @@ def get_eda(dataset):
 
     st.plotly_chart(fig)
 
-    # Distribución de Creditos por Job
+    # DistribuciÃ³n de Creditos por Job
     trace0 = go.Bar(
         x=dataset[dataset["risk"] == 'good']["job"].value_counts().index.values,
         y=dataset[dataset["risk"] == 'good']["job"].value_counts().values,
@@ -101,7 +101,7 @@ def get_eda(dataset):
 
     st.plotly_chart(fig)
 
-    # Distribución de Creditos por Cuentas de ahorro
+    # DistribuciÃ³n de Creditos por Cuentas de ahorro
     trace0 = go.Bar(
         x=dataset[dataset["risk"] == 'good']["saving_accounts"].value_counts().index.values,
         y=dataset[dataset["risk"] == 'good']["saving_accounts"].value_counts().values,
@@ -125,7 +125,7 @@ def get_eda(dataset):
     st.plotly_chart(fig)
 
 
-    # Distribución de Creditos por Cuentas de Crédiro
+    # DistribuciÃ³n de Creditos por Cuentas de CrÃ©diro
     trace0 = go.Bar(
         x=dataset[dataset["risk"] == 'good']["checking account"].value_counts().index.values,
         y=dataset[dataset["risk"] == 'good']["checking account"].value_counts().values,
@@ -148,7 +148,7 @@ def get_eda(dataset):
 
     st.plotly_chart(fig)
 
-    # Distribución de Creditos por duración
+    # DistribuciÃ³n de Creditos por duraciÃ³n
     trace0 = go.Bar(
         x=dataset[dataset["risk"] == 'good']["duration"].value_counts().index.values,
         y=dataset[dataset["risk"] == 'good']["duration"].value_counts().values,
@@ -170,7 +170,7 @@ def get_eda(dataset):
     fig = go.Figure(data=data, layout=layout)   
     st.plotly_chart(fig)
     
-    # Distribución de Creditos por Propósito
+    # DistribuciÃ³n de Creditos por PropÃ³sito
     trace0 = go.Bar(
         x=dataset[dataset["risk"] == 'good']["purpose"].value_counts().index.values,
         y=dataset[dataset["risk"] == 'good']["purpose"].value_counts().values,
@@ -250,7 +250,7 @@ def modelling(dataset):
     # Prepapar los modelos
     #arreglo para almacenar los modelos
     models = []
-    #agregamos cada uno de los métodos
+    #agregamos cada uno de los mÃ©todos
     models.append(('LGR', LogisticRegression()))
     models.append(('LDA', LinearDiscriminantAnalysis()))
     models.append(('KNN', KNeighborsClassifier()))
@@ -361,7 +361,7 @@ def TrainningNN(X_train, X_test, y_train, y_test):
     fig.add_trace(go.Scatter(x=[0, 1], y=[0, 1], mode='lines', line=dict(dash='dash'), name='No Skill: ROC AUC=%.3f' % (0.5)))
     # Curva ROC del modelo
     fig.add_trace(go.Scatter(x=fpr, y=tpr, mode='lines', name='Logistic: ROC AUC=%.3f' % (lr_auc)))
-    # Configura el diseño del gráfico
+    # Configura el diseÃ±o del grÃ¡fico
     fig.update_layout(xaxis_title='False Positive Rate',
                   yaxis_title='True Positive Rate',
                   title='ROC Curve',
@@ -382,14 +382,14 @@ def predictionForm(modelNN):
        'domestic appliances', 'repairs', 'vacation/others']
 
     age = st.text_input('Edad')
-    select_sex = st.selectbox('Género', option_sex)
+    select_sex = st.selectbox('GÃ©nero', option_sex)
     select_job = st.selectbox('Trabajo', option_job)
     select_housing = st.selectbox('Vivienda', option_housing)
     select_saving = st.selectbox('Cuenta de Ahorro', option_saving)
-    select_checking = st.selectbox('Cuenta de Crédito', option_checking)
-    credit_amount = st.text_input('Monto del Crédito')
-    select_duration = st.selectbox('Duración', option_duration)
-    select_purpose = st.selectbox('Propósito', option_purpose)
+    select_checking = st.selectbox('Cuenta de CrÃ©dito', option_checking)
+    credit_amount = st.text_input('Monto del CrÃ©dito')
+    select_duration = st.selectbox('DuraciÃ³n', option_duration)
+    select_purpose = st.selectbox('PropÃ³sito', option_purpose)
 
     if st.button('Enviar'):
         prediction(age,select_sex,select_job,select_housing,select_saving,select_checking,credit_amount, select_duration, select_purpose)    
@@ -425,7 +425,7 @@ def prediction(age,sex,job,housing,saving,checking,amount,duration,purpose):
         Age_cat='Senior'
     datasetNew['Age_cat'] = Age_cat
     
-  #asignar el proposito del crédito
+  #asignar el proposito del crÃ©dito
     purpose_car=0
     purpose_domestic=0
     purpose_education=0
@@ -562,7 +562,7 @@ def prediction(age,sex,job,housing,saving,checking,amount,duration,purpose):
     X_predict = X_values.astype(float)
 
     # Mostrar prediccion
-    st.write("### Predicción del Crédito")
+    st.write("### PredicciÃ³n del CrÃ©dito")
     # Mostrar dataframe
     st.write(dataset)
     # Calcular Prediccion
@@ -570,9 +570,9 @@ def prediction(age,sex,job,housing,saving,checking,amount,duration,purpose):
     st.write(valuePredict)
     
     if valuePredict[0][0] > valuePredict[0][1]:
-        st.write("#### Crédito Malo")
+        st.write("#### CrÃ©dito Malo")
     else:
-        st.write("#### Crédito Bueno")
+        st.write("#### CrÃ©dito Bueno")
 
 
 #writing simple text 
@@ -580,22 +580,22 @@ def prediction(age,sex,job,housing,saving,checking,amount,duration,purpose):
 st.title("Credit Card App")
 
     
-# ============ Aplicación Principal  ============
+# ============ AplicaciÃ³n Principal  ============
         
-# Definir las opciones de página
+# Definir las opciones de pÃ¡gina
 pages = ["Cargar Datos", "Explorar Datos", "Feature Engineering", "Modelado", "Neural Network", "Prediccion"]
 
 
-# Mostrar un menú para seleccionar la página
-selected_page = st.sidebar.multiselect("Seleccione una página", pages)
+# Mostrar un menÃº para seleccionar la pÃ¡gina
+selected_page = st.sidebar.multiselect("Seleccione una pÃ¡gina", pages)
 
-# Condicionales para mostrar la página seleccionada
+# Condicionales para mostrar la pÃ¡gina seleccionada
 if "Cargar Datos" in selected_page:
     st.write("""
     ## Cargar Datos""")
     # Cargar archivo CSV usando file uploader
     uploaded_file = st.file_uploader("Cargar archivo CSV", type=["csv"])
-    # Si el archivo se cargó correctamente
+    # Si el archivo se cargÃ³ correctamente
     if uploaded_file is not None:
     # Leer archivo CSV usando Pandas
         dataset = pd.read_csv(uploaded_file)
@@ -634,7 +634,7 @@ if "Neural Network" in selected_page:
         
 if "Prediccion" in selected_page:
     st.write("""
-    ## Predicción de un Crédito
+    ## PredicciÃ³n de un CrÃ©dito
     Capture los datos""")
     if uploaded_file is not None:
         predictionForm(modelNN) 
