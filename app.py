@@ -8,8 +8,7 @@ st.title("Credit Card App")
 # ============ Aplicación Principal  ============
         
 # Definir las opciones de página
-pages = ["Cargar Datos"]
-
+pages = ["Cargar Datos", "Explorar Datos"]
 
 # Mostrar un menú para seleccionar la página
 selected_page = st.sidebar.multiselect("Seleccione una página", pages)
@@ -27,3 +26,8 @@ if "Cargar Datos" in selected_page:
     # Mostrar datos en una tabla
         st.write(dataset)
         
+
+if "Explorar Datos" in selected_page:
+    st.write("""
+    ## Explore Data
+    Distributions""")
