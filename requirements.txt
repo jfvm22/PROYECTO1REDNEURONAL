@@ -1,1 +1,5 @@
 plotly==5.9.0
+scikit-learn==1.0.2
+xgboost==1.0.2
+lightgbm == 3.1.1
+tensorflow==2.12.0 
